@@ -1,7 +1,6 @@
 # Recruiting Platform (Laravel)
 
-This project is a recruitment website developed in **Laravel (PHP)** for a transportation company.  
-It includes job listings, application forms, multi-language support, and custom backend logic for managing candidates.
+Recruiting website for a trucking/transport company, built using PHP, custom templates, JavaScript, and service workers. Features job listings, application forms, and multilingual support.
 
 ### Features
 - Job postings and filtering
