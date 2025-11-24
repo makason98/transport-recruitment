@@ -1,0 +1,285 @@
+<html>
+<head>
+<title>Formular EU-TRUCKERS</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.4/semantic.min.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" rel="stylesheet" type="text/css">
+<style>
+.iti--allow-dropdown{
+    width: 100% !important;
+}
+</style>
+</head>
+<body>
+
+<form id="formular" class="ui form has-validation-callback" name="formi" action="<?= $app_url;?>/thank-you" method="post"> 
+                        <div class="ui two column grid">
+                            <div class="column">
+
+                                <div class="field">
+                                    <label>Prenume</label>
+                                    <input type="text" name="first_name" placeholder="Prenume" data-validation-error-msg="Te rog sa introduci prenumele" data-validation="length" data-validation-length="min3">
+                                </div>
+                                <div class="field">
+                                    <label>Nume</label>
+                                    <input type="text" name="last_name" placeholder="Nume" data-validation-error-msg="Te rog sa introduci numele" data-validation="length" data-validation-length="min3">
+                                </div>
+                                <div class="field">
+                                    <label>Telefon</label>
+                                    <input id="phone" type="tel" name="phones" placeholder="Telefon">
+                                </div>
+                                 <div class="field">
+                                    <label>Email</label>
+                                    <input type="text" name="email" placeholder="Email">
+                                </div>
+
+                                 <div class="field">
+                                    <label>Disponibilitate pentru relocare în Germania  </label>
+                                    <div class="ui form">
+                                      <div class="grouped fields">
+                                        <div class="field">
+                                          <div class="ui radio checkbox">
+                                            <input type="radio" name="relocation" value="1">
+                                            <label>DA</label>
+                                          </div>
+                                        </div>
+                                        <div class="field">
+                                          <div class="ui radio checkbox">
+                                            <input type="radio" name="relocation" value="0">
+                                            <label>NU</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <div class="ui form">
+                                    <div class="field">
+                                    <label>Limbi straine cunoscute</label>
+                                    <div class="field">
+                                      <label>Engleza</label>
+                                      <div class="ui selection dropdown" tabindex="0">
+                                          <input type="hidden" name="english">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text">Engleza</div>
+                                          <div class="menu" tabindex="-1">
+                                              <div class="item" data-value="1">Incepator</div>
+                                              <div class="item" data-value="2">Mediu</div>
+                                              <div class="item" data-value="3">Avansat</div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <div class="field">
+                                      <label>Germana</label>
+                                      <div class="ui selection dropdown" tabindex="0">
+                                          <input type="hidden" name="german">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text">Germana</div>
+                                          <div class="menu" tabindex="-1">
+                                              <div class="item" data-value="1">Incepator</div>
+                                              <div class="item" data-value="2">Mediu</div>
+                                              <div class="item" data-value="3">Avansat</div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <div class="field">
+                                      <label>Italiana</label>
+                                      <div class="ui selection dropdown" tabindex="0">
+                                          <input type="hidden" name="italian">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text">Italiana</div>
+                                          <div class="menu" tabindex="-1">
+                                              <div class="item" data-value="1">Incepator</div>
+                                              <div class="item" data-value="2">Mediu</div>
+                                              <div class="item" data-value="3">Avansat</div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <div class="field">
+                                      <label>Franceza</label>
+                                      <div class="ui selection dropdown" tabindex="0">
+                                          <input type="hidden" name="french">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text">Franceza</div>
+                                          <div class="menu" tabindex="-1">
+                                              <div class="item" data-value="1">Incepator</div>
+                                              <div class="item" data-value="2">Mediu</div>
+                                              <div class="item" data-value="3">Avansat</div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="column">
+
+                                <div class="field">
+                                    <label>ADR</label>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="adr_collets" value="1"><label>ADR COLETE</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="adr_cistern" value="1"><label>ADR CISTERNE</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="adr_general" value="1"><label>ADR (INCARCATURA GENERALA)</label>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label>Experienta</label>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="experience_1" value="1"><label>Prelata</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="experience_2" value="1"><label>Cisterna</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="experience_3" value="1"><label>Containere</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="experience_4" value="1"><label>Tandem</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="experience_5" value="1"><label>Frigo</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="experience_6" value="1"><label>A 5-a roata</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label>Curse</label>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="drives_1" value="1"><label>Pe distange lungi</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="drives_2" value="1"><label>Pe distange scurte</label>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label>Experienta</label>
+                                    <div class="ui form">
+                                      <div class="grouped fields">
+                                        <div class="field">
+                                          <div class="ui radio checkbox">
+                                            <input type="radio" name="driver_experience" value="1">
+                                            <label>Incepator</label>
+                                          </div>
+                                        </div>
+                                        <div class="field">
+                                          <div class="ui radio checkbox">
+                                            <input type="radio" name="driver_experience" value="2">
+                                            <label>Experienta peste 1 an</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label>Cazare</label>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="accommodation_1" value="1"><label>Modul plata angajator</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="accommodation_2" value="1"><label>Camion</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="accommodation_3" value="1"><label>Locuinta in regie proprie</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label>Ce tip de permis ai?</label>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_1" value="1"><label>B</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_2" value="1"><label>C</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_3" value="1"><label>C1E</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_4" value="1"><label>CE</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_5" value="1"><label>D</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_7" value="1"><label>D1</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_6" value="1"><label>DE</label>
+                                    </div>
+
+                                </div>
+                                <div class="field">
+                                    <label>Salariu dorit ( in mana - euro )</label>
+                                    <input type="text" name="salary">
+                                </div>
+                                <div class="field">
+                                      <label>Disponibilitate</label>
+                                      <div class="ui selection dropdown" tabindex="0">
+                                          <input type="hidden" name="disponibility">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text">Disponibilitate</div>
+                                          <div class="menu" tabindex="-1">
+                                              <div class="item" data-value="1">Imediat</div>
+                                              <div class="item" data-value="2">1-2 saptamani</div>
+                                              <div class="item" data-value="3">1 luna</div>
+                                          </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="column">
+                             <div class="field">
+                                    <label>GDPR</label>
+                                    <div class="ui checkbox">
+                                        <input data-validation="checkbox_group" data-validation-qty="min1" data-validation-error-msg="Te rog sa accepti ca datele furnizate de tine sa fie procesate si folosite de European Work Power" type="checkbox" name="gdpr" value="1" required=""><label>Accept ca datele personale furnizate de mine sa fie folosite pentru a primi date si informatii din partea European Work Power</label>
+                                    </div>
+                                </div>
+
+                                <button class="ui button aplica" type="submit">Aplica</button>
+
+                                 
+
+                            </div>
+
+
+                        </div>
+
+                    </form>
+                    
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.4/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput-jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+
+
+<script type="text/javascript">
+      $('#example2').calendar({
+          type: 'date'
+        });
+    $('.ui.dropdown').dropdown();
+        
+    var input = document.querySelector("#phone");
+window.intlTelInput(input, {
+hiddenInput: "phone",
+separateDialCode: true,
+  initialCountry: "auto",
+  geoIpLookup: function(callback) {
+    $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+      var countryCode = (resp && resp.country) ? resp.country : "";
+      callback(countryCode);
+    });
+  },
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.min.js" // just for formatting/placeholders etc
+});
+   
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<?php
+global $app_url, $con;
+?>
+<div id="header-bottom-wrap" class="is-clearfix">
+        <div id="header-bottom" class="site-header-bottom">
+          <div id="header-bottom-inner" class="site-header-bottom-inner ">
+            <section style="background: #f8f8f8 url(<?php echo $app_url;?>/assets/images/slider_bg04.jpg) no-repeat top center;" class="hero page-title is-medium has-text-centered about">
+              <div class="hero-body">
+                <div class="container">
+                  <h1>Available jobs</h1>
+                  <h3>EU-TRUCKERS - EWP BRAND</h3>
+                </div>
+                <!-- .hero-body -->
+              </div>
+              <!-- .container -->
+            </section>
+            <!-- .page-title -->
+          </div>
+          <!-- #header-bottom-inner -->
+        </div>
+        <!-- #header-bottom -->
+      </div>
+
+      <div id="content-main-wrap" class="is-clearfix">
+              <div id="content-area" class="site-content-area">
+                <div id="content-area-inner" class="site-content-area-inner">
+
+
+                    <?php
+
+$sql = "SELECT * FROM job_offers WHERE active='1' AND language_short='en'";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    
+ echo '<section id="news" class="section news-section is-clearfix">
+ <div class="container">
+   <h1 class="heading-title style-3">Here are some of the jobs available right now</h1>
+   <p class="heading-title-top has-text-centered">IF YOU CAN\'T FIND SOMETHING THAT SUITS YOU, <a href="'.$app_url.'/#apply">APPLY HERE</a>, AND WE WILL SEARCH FOR THE BEST DEAL AND CALL YOU RIGHT AWAY</p>
+
+   <div class="blog-list style-3 columns is-variable is-4 is-multiline">';
+
+    while($row = $result->fetch_assoc()) {
+
+echo '<a class="column is-12" href="'.$app_url.'/en/job/'. $row["job_offers_id"].'">
+
+<article class="blog-post" style="padding: 14px 10px;border-radius: 10px;background-color: #f8f8f8;border: solid 2px #f1f1f1;">
+<h2 class="entry-title" style="margin-bottom: 5px !important;">'. $row["title"].'</h2>
+<div class="post-meta" style="margin-bottom: 0px;">
+                        <ul>
+                          <li>
+                            <span style="color: rgba(75,80,93,.8);font-weight: 500;font-size: 90%;">'. $row["city_location"].'</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                  </article>
+                </a>';
+
+
+    }
+
+echo '</div>
+</div>
+</section>';    
+} else { ?>
+
+<section class="section introduction is-clearfix">
+                    <div class="container">
+                      <p class="heading-title-top has-text-centered">Togheter with passion</p>
+                      <h1 class="heading-title style-3">Available jobs</h1>
+                      <p class="has-text-centered">We're sorry but for now there are no available jobs translated in English, please come back latter. Thank you!</p>
+                      <br>
+                      <br>
+                      <br>
+                    </div>
+                    </section>
+
+<?php    
+}
+
+?>
+
+                </div>
+                <!-- #content-area-inner -->
+              </div>
+              <!-- #content-area -->
+            </div>

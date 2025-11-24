@@ -1,0 +1,291 @@
+<?php 
+global $app_url;
+?>
+<html>
+<head>
+<title>Form EU-TRUCKERS</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.4/semantic.min.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.0/css/intlTelInput.css" rel="stylesheet" type="text/css">
+<style>
+.iti--allow-dropdown{
+    width: 100% !important;
+}
+</style>
+</head>
+<body>
+
+<form id="formular" class="ui form has-validation-callback" target="formi action="<?= $app_url;?>/de/thank-you" method="post">
+                        <div class="ui two column grid">
+                            <div class="column">
+
+                                <div class="field">
+                                    <label>Vorname </label>
+                                    <input type="text" name="first_name" placeholder="Name" data-validation-error-msg="Please write your name" data-validation="length" data-validation-length="min3">
+                                </div>
+                                <div class="field">
+                                    <label>Name</label>
+                                    <input type="text" name="last_name" placeholder="Surname" data-validation-error-msg="Please write your surname" data-validation="length" data-validation-length="min3">
+                                </div>
+                                <div class="field">
+                                    <label>Telefon</label>
+                                    <input type="number" data-validation="number" data-validation-error-msg="Please enter your phone number correctly" data-validation-allowing="range[10000000;1000000000000000000]" name="phones" placeholder="Phone">
+                                </div>
+                                 <div class="field">
+                                    <label>Email</label>
+                                    <input type="text" name="email" placeholder="Email">
+                                </div>
+
+                                 <div class="field">
+                                    <label>Verfügbarkeit für den Umzug nach Deutschland</label>
+                                    <div class="ui form">
+                                      <div class="grouped fields">
+                                        <div class="field">
+                                          <div class="ui radio checkbox">
+                                            <input type="radio" name="relocation" value="1">
+                                            <label>JA</label>
+                                          </div>
+                                        </div>
+                                        <div class="field">
+                                          <div class="ui radio checkbox">
+                                            <input type="radio" name="relocation" value="0">
+                                            <label>NEIN</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <div class="ui form">
+                                    <div class="field">
+                                    <label>Fremdsprachen</label>
+                                    <div class="field">
+                                      <label>Englisch</label>
+                                      <div class="ui selection dropdown" tabindex="0">
+                                          <input type="hidden" name="english">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text">English</div>
+                                          <div class="menu" tabindex="-1">
+                                              <div class="item" data-value="1">Grundkenntnisse</div>
+                                              <div class="item" data-value="2">Fortgeschrittene Kenntnisse</div>
+                                              <div class="item" data-value="3">Kompetente Sprachkenntnisse</div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <div class="field">
+                                      <label>German</label>
+                                      <div class="ui selection dropdown" tabindex="0">
+                                          <input type="hidden" name="german">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text">Deutsch</div>
+                                          <div class="menu" tabindex="-1">
+                                              <div class="item" data-value="1">Grundkenntnisse</div>
+                                              <div class="item" data-value="2">Fortgeschrittene Kenntnisse</div>
+                                              <div class="item" data-value="3">Kompetente Sprachkenntnisse</div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <div class="field">
+                                      <label>Italian</label>
+                                      <div class="ui selection dropdown" tabindex="0">
+                                          <input type="hidden" name="italian">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text">Italienisch</div>
+                                          <div class="menu" tabindex="-1">
+                                              <div class="item" data-value="1">Grundkenntnisse</div>
+                                              <div class="item" data-value="2">Fortgeschrittene Kenntnisse</div>
+                                              <div class="item" data-value="3">Kompetente Sprachkenntnisse</div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <div class="field">
+                                      <label>French</label>
+                                      <div class="ui selection dropdown" tabindex="0">
+                                          <input type="hidden" name="french">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text">Französisch</div>
+                                          <div class="menu" tabindex="-1">
+                                              <div class="item" data-value="1">Grundkenntnisse</div>
+                                              <div class="item" data-value="2">Fortgeschrittene Kenntnisse</div>
+                                              <div class="item" data-value="3">Kompetente Sprachkenntnisse</div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="column">
+
+                                <div class="field">
+                                    <label>ADR</label>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="adr_collets" value="1"><label>ADR Stückgut</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="adr_cistern" value="1"><label> ADR Tanks</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="adr_general" value="1"><label>ADR Allgemeine Güter</label>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label>Erfahrung</label>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="experience_1" value="1"><label>LKW mit Plane</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="experience_2" value="1"><label>Tankwagen</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="experience_3" value="1"><label>Container</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="experience_4" value="1"><label>Tandem</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="experience_5" value="1"><label>Kühlfahrzeuge</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="experience_6" value="1"><label>Gliederzug/Drehschemel</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label>Strecke</label>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="drives_1" value="1"><label>Fernverkehr</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="drives_2" value="1"><label>Nahverkehr</label>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label>Erfahrung</label>
+                                    <div class="ui form">
+                                      <div class="grouped fields">
+                                        <div class="field">
+                                          <div class="ui radio checkbox">
+                                            <input type="radio" name="driver_experience" value="1">
+                                            <label>Anfänger</label>
+                                          </div>
+                                        </div>
+                                        <div class="field">
+                                          <div class="ui radio checkbox">
+                                            <input type="radio" name="driver_experience" value="2">
+                                            <label>Mehr als 1 Jahr Erfahrung</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label>Unterkunft</label>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="accommodation_1" value="1"><label> Vom Arbeitgeber bezahlt</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="accommodation_2" value="1"><label> Im LKW</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="accommodation_3" value="1"><label> Eigenheim</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label>Welche Führerscheine hast du?</label>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_1" value="1"><label>B</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_2" value="1"><label>C</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_3" value="1"><label>C1E</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_4" value="1"><label>CE</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_5" value="1"><label>D</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_7" value="1"><label>D1</label>
+                                    </div>
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="license_6" value="1"><label>DE</label>
+                                    </div>
+
+                                </div>
+                                <div class="field">
+                                    <label>Gewünschtes Gehalt (Netto - Euro)</label>
+                                    <input type="text" name="salary">
+                                </div>
+                                <div class="field">
+                                      <label>Verfügbarkeit</label>
+                                      <div class="ui selection dropdown" tabindex="0">
+                                          <input type="hidden" name="disponibility">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text">Verfügbarkeit</div>
+                                          <div class="menu" tabindex="-1">
+                                              <div class="item" data-value="1">Sofort</div>
+                                              <div class="item" data-value="2">1-2 Wochen</div>
+                                              <div class="item" data-value="3">1 Monat</div>
+                                          </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="column">
+                             <div class="field">
+                                    <label>DSGVO</label>
+                                    <div class="ui checkbox">
+                                        <input data-validation="checkbox_group" data-validation-qty="min1" data-validation-error-msg="Please accept that the provided data will be processed and used by European Work Power" type="checkbox" name="gdpr" value="1" required="">
+                                        <label>Ich akzeptiere, dass die von mir bereitgestellten Daten verwendet werden, um Daten und Informationen von European Work Power zu erhalten</label>
+                                    </div>
+                                </div>
+
+                                <button class="ui button aplica" type="submit">Apply</button>
+
+                                 
+
+                            </div>
+
+
+                        </div>
+
+                    </form>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.4/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.0/js/utils.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.0/js/intlTelInput-jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.0/js/intlTelInput.min.js"></script>
+
+
+<script type="text/javascript">
+      $('#example2').calendar({
+          type: 'date'
+        });
+    $('.ui.dropdown').dropdown();
+        
+        
+    var input = document.querySelector("#phone");
+window.intlTelInput(input, {
+hiddenInput: "phone",
+separateDialCode: true,
+  initialCountry: "auto",
+  geoIpLookup: function(callback) {
+    $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+      var countryCode = (resp && resp.country) ? resp.country : "";
+      callback(countryCode);
+    });
+  },
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.min.js" // just for formatting/placeholders etc
+});
+    </script>
+
+
+
+</body>
+</html>

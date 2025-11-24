@@ -1,0 +1,92 @@
+<?php
+global $app_url, $con;
+
+global $ax;
+global $ax_id;
+global $id_inserted;
+    
+  function mysql_insert_array($table, $data, $exclude = array(), $con) {
+    global $ax;
+    global $ax_id;
+    global $id_inserted;
+ 
+
+      if (mysqli_connect_errno())
+      {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+      }
+
+
+      $fields = $values = array();
+      if( !is_array($exclude) ) $exclude = array($exclude);
+      foreach( array_keys($data) as $key ) {
+          if( !in_array($key, $exclude) ) {
+              $fields[] = "`$key`";
+              $values[] = "'".$data[$key]."'";
+          }
+      }
+      $fields = implode(",", $fields);
+      $values = implode(",", $values);
+      $con->query("INSERT INTO `$table` ($fields) VALUES ($values)");
+      
+      $file= 'logme.txt';
+      
+      $data_n = "INSERT INTO `$table` ($fields) VALUES ($values)"."\n";
+      fwrite($handle_1, $data_n);
+      
+      fclose($handle_1);
+      
+
+      $id_inserted = $con->insert_id;
+      $con->query("CALL check_existence($id_inserted)");
+
+      $result2 = mysqli_query($con, "select * from web_et_entries where id='$id_inserted'");
+      while ($row = mysqli_fetch_assoc($result2))
+         {
+            if(!empty($row['candidates_id']))$ax="1";
+            $ax_id = $row['candidates_id'];
+         }
+      mysqli_close($con);
+      
+      
+  }
+
+
+  $result = mysql_insert_array("web_et_entries", $_POST, array("submit", "phones"), $con);
+
+ob_end_clean();
+?>
+<html>
+<head>
+<title>Thank you</title>
+</head>
+<body>
+  <section class="section introduction is-clearfix">
+    <div class="container">
+      <p class="heading-title-top has-text-centered">EU-TRUCKERS an European Work Power</p>
+      <h1 class="heading-title style-3">Thank you for your interest!</h1>
+      <p class="has-text-centered">An EU-Truckers recruitor will contact you via the phone as soon as possible. Our work schedule is from Monday to Friday with 09:00 and 17:00 working hours.</p>
+      <br><br><br>
+    </div>
+   </section>
+
+   <!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '528147854329950');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=528147854329950&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</body>
+</html>

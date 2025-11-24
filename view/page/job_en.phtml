@@ -1,0 +1,99 @@
+<?php
+global $app_url,$con;
+mysqli_set_charset( $con, 'utf8'); 
+$id = $this->id;
+$sql = "SELECT * FROM job_offers WHERE job_offers_id='$id' OR meta='$id' AND language_short='en' LIMIT 1";
+$result = $con->query($sql);
+$result = $result->fetch_assoc();
+
+?>
+<style>
+.beefup__head:after{
+display: none;
+}
+</style>
+<div id="header-bottom-wrap" class="is-clearfix">
+        <div id="header-bottom" class="site-header-bottom">
+          <div id="header-bottom-inner" class="site-header-bottom-inner ">
+            <section style="background: #f8f8f8 url(<?php echo $app_url;?>/assets/images/slider_bg04.jpg) no-repeat top center;" class="hero page-title is-medium has-text-centered about">
+              <div class="hero-body">
+                <div class="container">
+                  <h1><?=$result["title"];?></h1>
+                  <h3>EU-TRUCKERS - EWP BRAND</h3>
+                </div>
+                <!-- .hero-body -->
+              </div>
+              <!-- .container -->
+            </section>
+            <!-- .page-title -->
+          </div>
+          <!-- #header-bottom-inner -->
+        </div>
+        <!-- #header-bottom -->
+      </div>
+
+      <div id="content-main-wrap" class="is-clearfix">
+              <div id="content-area" class="site-content-area">
+                <div id="content-area-inner" class="site-content-area-inner">
+                  
+                
+                <section id="apply-now" class="section  is-clearfix">
+              <div>
+               
+                  <div class="columns is-multiline is-variable is-8">
+                    <div class="column is-6-desktop is-12-tablet content">
+                      <h2 class="has-text-centered">Detatails about job</h2>
+                      <br>
+                      <div class="accordions style-arrow">
+                        <div class="beefup is-open">
+                          <h3 class="beefup__head has-text-secondary-5"><?=$result["title"];?>
+                            <div style="float:right">
+                            <span class="tag is-success"><?=$result["sallary"];?></span>
+                            <span class="tag is-warning"><?=$result["city_location"];?></span>
+                            <div>
+                          </h3>
+                            <div class="beefup__body content" style="">
+
+                              <div class='social-share-btns'>
+                                <a style="background-color:#25D366" class='share-btn share-btn-twitter' href='https://twitter.com/intent/tweet?text=https://codepen.io/marko-zub/#' rel='nofollow' target='_blank'>
+                                  <i class='ion-social-whatsapp'></i>
+                                  WhatsApp
+                                </a>
+                                <a class='share-btn share-btn-facebook' href='https://www.facebook.com/sharer/sharer.php?u=https://codepen.io/marko-zub/#' rel='nofollow' target='_blank'>
+                                  <i class='ion-social-facebook'></i>
+                                  Facebook
+                                </a>
+                                <a class='share-btn share-btn-linkedin' href='https://www.linkedin.com/cws/share?url=https://codepen.io/marko-zub/#' rel='nofollow' target='_blank'>
+                                  <i class='ion-chatbubbles'></i>
+                                  SMS
+                                </a>
+                                <a class='share-btn share-btn-mail' href='mailto:?subject=Look Fun Codepen Account&amp;amp;body=https://codepen.io/marko-zub/#' rel='nofollow' target='_blank' title='via email'>
+                                  <i class='ion-paper-airplane'></i>
+                                  Mail
+                                </a>
+                              </div>
+  
+                            <?= html_entity_decode($result["description"]);?>
+
+                            </div>
+                        </div>
+                      
+                      </div>
+                    </div>
+                    
+                    <div class="column is-6-desktop is-12-tablet content">
+                      <h2 class="has-text-centered">Apply now</h2>
+                      <br>
+                      <iframe style="height:850px;width:100%" src="<?= $app_url;?>/en/form"></iframe>
+                    </div>
+                  </div>
+                </div>
+              
+            </section>
+
+
+                </div>
+                <!-- #content-area-inner -->
+              </div>
+              <!-- #content-area -->
+            </div>

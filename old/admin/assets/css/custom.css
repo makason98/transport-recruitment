@@ -1,0 +1,5 @@
+/* Write your custom CSS here */
+
+.page-sidebar-menu ul li a, body, span, text {
+    color: white !important;
+}
