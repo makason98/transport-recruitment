@@ -1,5 +1,19 @@
-# trucker-laravel
-This is a laravel site for a recruiting company, developedin laravel(PHP)
+# Recruiting Platform (Laravel)
+
+This project is a recruitment website developed in **Laravel (PHP)** for a transportation company.  
+It includes job listings, application forms, multi-language support, and custom backend logic for managing candidates.
+
+### Features
+- Job postings and filtering
+- Candidate application system
+- Admin panel for managing jobs & applications
+- Email notifications
+- Multi-language support
+- Responsive UI
+- SEO Integrations
+
+### Technologies
+**Laravel**, **PHP**, **MySQL**, **Blade**, **Bootstrap**, **JavaScript**
 
 
 ![Screenshot from 2024-04-16 19-11-07](https://github.com/makason98/trucker-laravel/assets/70956602/e05ff3f3-ba28-43df-81be-e95f3ce62f30)
