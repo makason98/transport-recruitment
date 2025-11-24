@@ -1,4 +1,4 @@
-# Recruiting Platform (Laravel)
+# Recruiting Platform 
 
 Recruiting website for a trucking/transport company, built using PHP, custom templates, JavaScript, and service workers. Features job listings, application forms, and multilingual support.
 
